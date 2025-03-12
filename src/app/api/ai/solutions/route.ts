@@ -4,7 +4,7 @@ import { OpenAI } from 'openai';
 import { dbConnect } from '@/lib/mongodb';
 import Problem from '@/models/Problem';
 import Solution from '@/models/Solution';
-import { authOptions } from '../../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,

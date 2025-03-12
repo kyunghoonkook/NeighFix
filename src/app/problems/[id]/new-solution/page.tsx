@@ -4,7 +4,7 @@ import { getServerSession } from 'next-auth';
 import { dbConnect } from '@/lib/mongodb';
 import Problem from '@/models/Problem';
 import { SolutionForm } from '@/components/solutions/SolutionForm';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 
 interface NewSolutionPageProps {
   params: {

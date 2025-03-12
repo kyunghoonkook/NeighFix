@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { dbConnect } from '@/lib/mongodb';
 import Problem from '@/models/Problem';
-import { authOptions } from '../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 
 // 필터 타입 정의
 interface ProblemFilter {

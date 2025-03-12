@@ -108,23 +108,24 @@ export function SolutionForm({ problemId, editMode = false, solutionData }: Solu
     }
     
     try {
-      const solutionData = {
+      const submissionData = {
         problemId,
         title,
         description,
         budget: budget || 0,
         timeline,
         resources,
-        aiGenerated: isAIGenerated
+        aiGenerated: isAIGenerated,
+        ...(editMode && solutionData?._id && { _id: solutionData._id })
       };
       
       let response;
-      if (editMode && solutionData._id) {
+      if (editMode && solutionData?._id) {
         // 해결책 수정
-        response = await axios.put(`/api/solutions/${solutionData._id}`, solutionData);
+        response = await axios.put(`/api/solutions/${solutionData._id}`, submissionData);
       } else {
         // 새로운 해결책 등록
-        response = await axios.post('/api/solutions', solutionData);
+        response = await axios.post('/api/solutions', submissionData);
       }
       
       setSuccess(editMode ? '해결책이 성공적으로 수정되었습니다.' : '해결책이 성공적으로 등록되었습니다.');

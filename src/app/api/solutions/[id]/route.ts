@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { dbConnect } from '@/lib/mongodb';
 import Solution from '@/models/Solution';
-import { authOptions } from '../../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 import mongoose from 'mongoose';
 
 // 특정 해결책 조회

@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { dbConnect } from '@/lib/mongodb';
 import Problem from '@/models/Problem';
 import Resource from '@/models/Resource';
-import { authOptions } from '../../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 
 // 문제에 적합한 자원 매칭
 export async function GET(req: NextRequest) {

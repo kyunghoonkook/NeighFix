@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { dbConnect } from '@/lib/mongodb';
 import Solution from '@/models/Solution';
 import Problem from '@/models/Problem';
-import { authOptions } from '../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 import mongoose from 'mongoose';
 
 // 해결책 목록 조회

@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { dbConnect } from '@/lib/mongodb';
 import Chat from '@/models/Chat';
 import Problem from '@/models/Problem';
-import { authOptions } from '../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 
 // 참가자 타입 정의
 interface Participant {

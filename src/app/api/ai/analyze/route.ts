@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { OpenAI } from 'openai';
 import { dbConnect } from '@/lib/mongodb';
 import Problem from '@/models/Problem';
-import { authOptions } from '../../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,

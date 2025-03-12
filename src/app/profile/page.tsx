@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/lib/auth';
 import { dbConnect } from '@/lib/mongodb';
 import Problem from '@/models/Problem';
 import Solution from '@/models/Solution';

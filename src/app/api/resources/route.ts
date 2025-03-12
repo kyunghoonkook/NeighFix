@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { dbConnect } from '@/lib/mongodb';
 import Resource from '@/models/Resource';
-import { authOptions } from '../auth/[...nextauth]/route';
+import { authOptions } from "@/lib/auth";
 
 // 자원 목록 조회 또는 필터링
 export async function GET(req: NextRequest) {
