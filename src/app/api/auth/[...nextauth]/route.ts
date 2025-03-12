@@ -2,12 +2,9 @@ import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcrypt';
 import { dbConnect } from '@/lib/mongodb';
-// import { MongoDBAdapter } from '@auth/mongodb-adapter';
-// import clientPromise from '@/lib/mongodb';
 import User from '@/models/User';
 
 export const authOptions: NextAuthOptions = {
-  // adapter: MongoDBAdapter(clientPromise), // 필요한 경우 나중에 다시 활성화
   providers: [
     CredentialsProvider({
       name: 'Credentials',
